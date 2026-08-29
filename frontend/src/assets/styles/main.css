@@ -74,7 +74,7 @@ a {
   background: var(--azul-oscuro);
   color: var(--blanco);
 
-  padding: 15px 40px;
+  padding: 10px 30px;
 
   position: sticky;
   top: 0;
@@ -115,13 +115,13 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 26px;
 }
 
 .nav-links a {
   color: var(--blanco);
 
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 600;
 
   letter-spacing: 0.5px;
@@ -143,7 +143,7 @@ a {
   background: var(--rojo-principal);
   color: var(--blanco);
 
-  padding: 10px 22px;
+  padding: 9px 18px;
 
   border-radius: 4px;
 
@@ -168,12 +168,23 @@ a {
 
   min-height: 100vh;
 
-  background-size: cover;
+  background-color: var(--azul-negro);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
   overflow: hidden;
+}
+
+.home__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(10, 22, 55, 0.30);
+
+  z-index: 0;
 }
 
 
@@ -187,7 +198,8 @@ a {
 
   min-height: 100vh;
 
-  background-size: cover;
+  background-color: var(--azul-negro);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -207,7 +219,7 @@ a {
   position: absolute;
   inset: 0;
 
-  background: rgba(10, 22, 55, 0.45);
+  background: rgba(10, 22, 55, 0.30);
 
   z-index: 0;
 }
@@ -250,20 +262,6 @@ a {
   align-items: center;
 
   overflow: hidden;
-}
-
-
-/* Capa oscura */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(10, 22, 55, 0.45);
-
-  z-index: 0;
 }
 
 
@@ -639,7 +637,8 @@ a {
 
   min-height: 100vh;
 
-  background-size: cover;
+  background-color: var(--azul-negro);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -660,7 +659,7 @@ a {
 
   inset: 0;
 
-  background: rgba(10, 22, 55, 0.45);
+  background: rgba(10, 22, 55, 0.30);
 
   z-index: 0;
 }
@@ -737,7 +736,8 @@ a {
 
   min-height: 100vh;
 
-  background-size: cover;
+  background-color: var(--azul-negro);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -750,7 +750,7 @@ a {
 
   inset: 0;
 
-  background: rgba(10, 22, 55, 0.45);
+  background: rgba(10, 22, 55, 0.30);
 
   z-index: 0;
 }
@@ -878,14 +878,14 @@ a {
 
   font-weight: bold;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .footer-brand .brand-letter {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
 
-  flex: 0 0 34px;
+  flex: 0 0 40px;
 }
 
 .footer-slogan {
@@ -895,13 +895,13 @@ a {
 
   text-align: center;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .footer-contact p {
   margin: 1px 0;
 
-  font-size: 11px;
+  font-size: 13px;
 }
 
 
@@ -935,16 +935,16 @@ a {
 }
 
 .socials a img {
-  width: 80px;
-  height: 80px;
+  width: 48px;
+  height: 48px;
 
   object-fit: contain;
   display: block;
 }
 
 .socials a:last-child img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 
@@ -978,16 +978,16 @@ a {
 }
 
 .footer-socials a img {
-  width: 80px;
-  height: 80px;
+  width: 48px;
+  height: 48px;
 
   object-fit: contain;
   display: block;
 }
 
 .footer-socials a:last-child img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 
@@ -1145,7 +1145,7 @@ a {
   }
 
   .brand-text {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .btn-unete {
@@ -1166,23 +1166,31 @@ a {
   .home {
     background-attachment: scroll;
 
-    background-position: center;
+    background-size: cover;
+
+    background-position: 8% center;
   }
 
   .page-bg {
     background-attachment: scroll;
 
+    background-size: cover;
+
     background-position: 8% center;
   }
 
   .proposals-page {
-    background-attachment: scroll;
+    background-attachment: fixed;
+
+    background-size: cover;
 
     background-position: 8% center;
   }
 
   .site-hero {
     background-attachment: scroll;
+
+    background-size: cover;
 
     background-position: 8% center;
   }
@@ -1306,7 +1314,7 @@ a {
     position: relative;
 
     width: 100%;
-    height: 340px;
+    height: 200px;
 
     object-fit: cover;
 
@@ -1326,11 +1334,11 @@ a {
 
     justify-content: center;
 
-    padding: 40px 20px;
+    padding: 18px 15px;
 
     text-align: center;
 
-    gap: 14px;
+    gap: 10px;
   }
 
   .footer-brand {
@@ -1368,11 +1376,11 @@ a {
 }
 
 .nav-actions .socials a img {
-  width: 80px !important;
-  height: 80px !important;
+  width: 48px !important;
+  height: 48px !important;
 
-  min-width: 80px !important;
-  min-height: 80px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
 
   max-width: none !important;
   max-height: none !important;
@@ -1384,11 +1392,11 @@ a {
 }
 
 .nav-actions .socials a:last-child img {
-  width: 60px !important;
-  height: 60px !important;
+  width: 80px !important;
+  height: 80px !important;
 
-  min-width: 60px !important;
-  min-height: 60px !important;
+  min-width: 80px !important;
+  min-height: 80px !important;
 }
 
 .nav-actions .socials a:hover {
