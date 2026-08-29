@@ -168,7 +168,7 @@ a {
 .home {
   position: relative;
 
-  min-height: calc(100vh - 220px);
+  min-height: calc(100vh - 240px);
 
   background-size: 110% 100%;
   background-position: center top;
@@ -196,7 +196,7 @@ a {
 
 .page-bg {
   position: relative;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 240px);
 
   background-size: 110% 100%;
   background-position: center top;
@@ -634,7 +634,7 @@ a {
 
   width: 100%;
 
-  min-height: 100vh;
+  min-height: calc(100vh - 240px);
 
   background-size: 110% 100%;
   background-position: center top;
@@ -672,7 +672,7 @@ a {
 
   width: 100%;
 
-  min-height: 100vh;
+  min-height: calc(100vh - 240px);
 
   display: flex;
 
@@ -732,7 +732,7 @@ a {
 .proposals-page {
   position: relative;
 
-  min-height: 100vh;
+  min-height: calc(100vh - 240px);
 
   background-size: 110% 100%;
   background-position: center top;
