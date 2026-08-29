@@ -168,7 +168,7 @@ a {
 .home {
   position: relative;
 
-  min-height: 100vh;
+  min-height: calc(100vh - 160px);
 
   background-size: 110% 100%;
   background-position: center top;
@@ -196,7 +196,7 @@ a {
 
 .page-bg {
   position: relative;
-  min-height: 90vh;
+  min-height: calc(100vh - 140px);
 
   background-size: 110% 100%;
   background-position: top left;
@@ -1183,6 +1183,8 @@ a {
 
     background-position: 8% center;
 
+    background-image: none !important;
+
     min-height: 430px;
   }
 
@@ -1197,6 +1199,8 @@ a {
 
     background-position: 8% center;
 
+    background-image: none !important;
+
     min-height: 520px;
   }
 
@@ -1206,6 +1210,8 @@ a {
     background-size: cover;
 
     background-position: 8% center;
+
+    background-image: none !important;
   }
 
   .site-hero {
@@ -1214,6 +1220,8 @@ a {
     background-size: cover;
 
     background-position: 8% center;
+
+    background-image: none !important;
 
     min-height: 300px;
   }
