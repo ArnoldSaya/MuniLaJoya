@@ -7,6 +7,11 @@ import fondoCamilo from '@/assets/images/FondoCamilo.jpg'
     class="page-bg pronto-view"
     :style="{ backgroundImage: `url(${fondoCamilo})` }"
   >
+    <img
+      :src="fondoCamilo"
+      alt=""
+      class="view-bg"
+    />
     <h1>Próximamente</h1>
 
     <p class="area-descripcion">

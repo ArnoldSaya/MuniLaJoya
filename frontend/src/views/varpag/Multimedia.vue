@@ -7,6 +7,11 @@ import fondoCamilo from '@/assets/images/FondoCamilo.jpg'
     class="page-bg"
     :style="{ backgroundImage: `url(${fondoCamilo})` }"
   >
+    <img
+      :src="fondoCamilo"
+      alt=""
+      class="view-bg"
+    />
     <div class="head-title">
       <h2>Multimedia</h2>
       <p>Fotos y videos de nuestras actividades.</p>

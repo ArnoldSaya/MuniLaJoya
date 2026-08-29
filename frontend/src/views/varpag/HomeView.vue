@@ -9,6 +9,12 @@ import logoA from '@/assets/images/logoA.jpg'
     :style="{ backgroundImage: `url(${fondoCamilo})` }"
   >
 
+    <img
+      :src="fondoCamilo"
+      alt=""
+      class="view-bg"
+    />
+
     <div class="home__overlay"></div>
 
     <!-- =========================

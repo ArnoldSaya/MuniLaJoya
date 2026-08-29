@@ -48,7 +48,7 @@ const areas = [
     <img
       :src="fondoCamilo"
       alt=""
-      class="proposals-page__bg"
+      class="view-bg"
     />
 
     <div class="proposals-page__overlay"></div>
