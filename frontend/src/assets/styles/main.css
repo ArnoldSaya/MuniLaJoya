@@ -7,18 +7,16 @@
   --azul-oscuro: #102D63;
   --azul-medio: #234F8F;
   --azul-negro: #0A1637;
-
   --rojo-principal: #F72936;
   --rojo-oscuro: #CE4048;
-
   --blanco: #FFFFFF;
   --gris-claro: #F4F6F9;
 
   /* Alias */
+
   --azul: var(--azul-principal);
   --verde: var(--rojo-principal);
 }
-
 
 /* =========================
    BASE
@@ -41,7 +39,6 @@ body {
   color: var(--azul-negro);
 }
 
-
 /* =========================
    LAYOUT: FOOTER PEGADO ABAJO
    ========================= */
@@ -61,7 +58,6 @@ a {
   color: inherit;
 }
 
-
 /* =========================
    NAVBAR
    ========================= */
@@ -70,41 +66,32 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background: var(--azul-oscuro);
   color: var(--blanco);
-
   padding: 10px 30px;
-
   position: sticky;
   top: 0;
   z-index: 100;
 }
+
 .brand {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   cursor: pointer;
 }
+
 .brand-letter {
   width: 44px;
   height: 44px;
-
   border-radius: 50%;
-
   background: var(--blanco);
   color: var(--azul-oscuro);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
   font-size: 20px;
-
   flex-shrink: 0;
   object-fit: cover;
 }
@@ -122,12 +109,9 @@ a {
 
 .nav-links a {
   color: var(--blanco);
-
   font-size: 19px;
   font-weight: 600;
-
   letter-spacing: 0.5px;
-
   padding-bottom: 4px;
 }
 
@@ -144,14 +128,10 @@ a {
 .btn-unete {
   background: var(--rojo-principal);
   color: var(--blanco);
-
   padding: 9px 18px;
-
   border-radius: 4px;
-
   font-weight: bold;
   font-size: 14px;
-
   transition: background 0.2s ease;
 }
 
@@ -159,55 +139,57 @@ a {
   background: var(--rojo-oscuro);
 }
 
+/* =========================
+   IMAGEN DE FONDO MÓVIL
+   ========================= */
+
+.view-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 8% center;
+  z-index: -1;
+  display: none;
+}
 
 /* =========================
    HOME
    FONDO GENERAL
    ========================= */
 
-.home {
+/* =========================
+   HOME / PAGE-BG / PROPOSALS-PAGE / SITE-HERO
+   FONDO GENERAL — MISMO BLOQUE PARA LAS 4
+   ========================= */
+
+.home,
+.page-bg,
+.proposals-page,
+.site-hero {
   position: relative;
-
-  min-height: calc(100vh - 240px);
-
-  display: flex;
-  flex-direction: column;
-
+  min-height: 100vh;
   background-size: 110% 100%;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   overflow: hidden;
 }
 
-.home__overlay {
+.home__overlay,
+.page-bg::before,
+.proposals-page__overlay,
+.site-hero__overlay {
+  content: "";
   position: absolute;
-
   inset: 0;
-
   background: rgba(10, 22, 55, 0.30);
-
   z-index: 0;
 }
 
-
-/* =========================
-   FONDO COMÚN DE PÁGINAS
-   (igual que el inicio)
-   ========================= */
-
+/* Extras propias de .page-bg (centrado de contenido) */
 .page-bg {
-  position: relative;
-  min-height: calc(100vh - 240px);
-
-  background-size: 110% 100%;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,21 +197,17 @@ a {
   text-align: center;
 }
 
-.page-bg::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: rgba(10, 22, 55, 0.30);
-
-  z-index: 0;
+.page-bg > *:not(.view-bg) {
+  position: relative;
+  z-index: 1;
 }
 
-.page-bg > * {
-  position: relative;
-
-  z-index: 1;
+/* Extras propias de .site-hero (centrado de contenido) */
+.site-hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* =========================
@@ -249,25 +227,18 @@ a {
   font-size: 16px;
 }
 
-
 /* =========================
    HERO HOME
    ========================= */
 
 .hero {
   position: relative;
-
   width: 100%;
-  min-height: 700px;
-
-  flex: 1;
-
+  min-height: calc(100vh - 240px);
   display: flex;
   align-items: center;
-
   overflow: hidden;
 }
-
 
 /* =========================
    CONTENIDO HERO
@@ -275,70 +246,49 @@ a {
 
 .hero-content {
   position: relative;
-
   z-index: 1;
-
   color: var(--blanco);
-
   padding: 60px;
-
   max-width: 650px;
 }
 
 .hero-eyebrow {
   font-size: 20px;
-
   font-weight: bold;
-
   margin: 0 0 5px;
 }
 
 .hero-title {
   font-size: 60px;
-
   font-weight: 900;
-
   margin: 0;
-
   line-height: 1;
 }
 
 .hero-line {
   width: 70px;
   height: 4px;
-
   background: var(--rojo-principal);
-
   margin: 20px 0;
 }
 
 .hero-subtitle {
   font-size: 16px;
-
   line-height: 1.5;
-
   max-width: 420px;
-
   margin: 0 0 25px;
 }
 
 .btn-plan {
   display: inline-flex;
-
   align-items: center;
-
   gap: 10px;
-
   background: var(--rojo-principal);
   color: var(--blanco);
-
   padding: 14px 26px;
-
   border-radius: 4px;
-
   font-weight: bold;
   font-size: 14px;
-
   transition: background 0.2s ease;
 }
 
@@ -346,65 +296,47 @@ a {
   background: var(--rojo-oscuro);
 }
 
-
 /* =========================
    BADGE
    ========================= */
 
 .hero-badge {
   position: absolute;
-
   top: 30px;
   right: 40px;
-
   z-index: 2;
-
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   color: var(--blanco);
 }
 
 .badge-circle {
   width: 50px;
   height: 50px;
-
   border-radius: 50%;
-
   background: var(--blanco);
-
   color: var(--azul-principal);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
   font-size: 22px;
-
   flex-shrink: 0;
-
   object-fit: cover;
 }
 
 .badge-circle.small {
   width: 40px;
   height: 40px;
-
   font-size: 18px;
 }
 
 .badge-text {
   font-weight: bold;
-
   font-size: 14px;
-
   line-height: 1.2;
 }
-
 
 /* =========================
    TARJETA PLAN
@@ -412,66 +344,47 @@ a {
 
 .hero-card {
   position: absolute;
-
-  bottom: 40px;
+  top: 50%;
   right: 40px;
-
+  transform: translateY(-50%);
   z-index: 2;
-
   background: var(--blanco);
   color: var(--azul-negro);
-
   padding: 20px;
-
   border-radius: 8px;
-
   width: 240px;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .hero-card h3 {
   margin: 0 0 8px;
-
   font-size: 14px;
-
   color: var(--azul-principal);
 }
 
 .hero-card p {
   font-size: 12px;
-
   margin: 0 0 14px;
-
   color: #4b5563;
 }
 
 .qr-placeholder {
   width: 90px;
   height: 90px;
-
   background: var(--gris-claro);
-
   margin: 0 auto 14px;
-
   border-radius: 4px;
 }
 
 .btn-plan-card {
   display: block;
-
   text-align: center;
-
   background: var(--rojo-principal);
   color: var(--blanco);
-
   padding: 10px;
-
   border-radius: 4px;
-
   font-size: 13px;
   font-weight: bold;
-
   transition: background 0.2s ease;
 }
 
@@ -479,42 +392,31 @@ a {
   background: var(--rojo-oscuro);
 }
 
-
 /* =========================
    CONTENIDO / OPCIONES
    ========================= */
 
 .content {
   position: relative;
-
   z-index: 3;
-
   width: 94%;
   max-width: 1400px;
-
   margin: 0 auto;
-
   padding: 70px 0 100px;
 }
 
 .content h2 {
   text-align: center;
-
   color: var(--azul-principal);
-
   margin-bottom: 50px;
-
   font-size: 32px;
 }
 
 .options {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 35px;
 }
-
 
 /* =========================
    TARJETAS
@@ -522,27 +424,16 @@ a {
 
 .option-card {
   display: block;
-
   width: 60%;
-
   margin: 0 auto;
-
   background: var(--blanco);
-
   border-radius: 12px;
-
   overflow: hidden;
-
   color: var(--azul-negro);
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
   border-bottom: 3px solid transparent;
-
   text-decoration: none;
-
   cursor: pointer;
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -551,12 +442,9 @@ a {
 
 .option-card:hover {
   transform: translateY(-5px);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
   border-bottom-color: var(--rojo-principal);
 }
-
 
 /* =========================
    TARJETAS BLOQUEADAS
@@ -568,12 +456,9 @@ a {
 
 .option-card--disabled:hover {
   transform: none;
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
   border-bottom-color: transparent;
 }
-
 
 /* =========================
    IMÁGENES
@@ -581,16 +466,11 @@ a {
 
 .option-image {
   width: 100%;
-
   height: auto;
-
   object-fit: contain;
-
   display: block;
-
   background: var(--gris-claro);
 }
-
 
 /* =========================
    PLACEHOLDER
@@ -598,12 +478,9 @@ a {
 
 .option-placeholder {
   width: 100%;
-
   height: 260px;
-
   background: var(--gris-claro);
 }
-
 
 /* =========================
    TÍTULO
@@ -611,81 +488,32 @@ a {
 
 .option-title {
   min-height: 70px;
-
   padding: 18px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   text-align: center;
-
   font-size: 18px;
-
   font-weight: 600;
-
   color: var(--azul-principal);
 }
 
-
 /* =========================
    SITE HERO
+   (contenido interno)
    ========================= */
-
-.site-hero {
-  position: relative;
-
-  width: 100%;
-
-  min-height: calc(100vh - 240px);
-
-  background-size: 110% 100%;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-}
-
-
-/* Overlay */
-
-.site-hero__overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(10, 22, 55, 0.30);
-
-  z-index: 0;
-}
-
 
 /* Contenido */
 
 .site-hero__body {
   position: relative;
-
   z-index: 1;
-
   width: 100%;
-
-  min-height: calc(100vh - 240px);
-
+  min-height: 100vh;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
-
 
 /* =========================
    TÍTULO DE PÁGINAS
@@ -693,113 +521,53 @@ a {
 
 .head-title {
   position: relative;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
   text-align: center;
-
   padding: 20px;
 }
 
 .head-title h2 {
   color: var(--blanco);
-
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-
   margin: 0;
-
   font-size: 40px;
 }
 
 .head-title p {
   color: var(--blanco);
-
   opacity: 0.9;
-
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-
   margin: 12px 0 0;
-
   font-size: 16px;
 }
 
-
 /* =========================
    PROPUESTAS
+   (contenido interno)
    ========================= */
-
-.proposals-page {
-  position: relative;
-
-  min-height: calc(100vh - 240px);
-
-  background-size: 110% 100%;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  overflow: hidden;
-}
-
-.view-bg {
-  position: fixed;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: 8% center;
-
-  z-index: -1;
-
-  display: none;
-}
-
-.proposals-page__overlay {
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(10, 22, 55, 0.30);
-
-  z-index: 0;
-}
 
 .proposals-header {
   position: relative;
-
   z-index: 1;
 }
 
 .proposals-hero {
   position: relative;
-
   min-height: 100vh;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
-
   justify-content: center;
-
   overflow: hidden;
 }
 
 .proposals-hero__inner {
   position: relative;
-
   z-index: 1;
-
   width: 100%;
 }
 
@@ -809,23 +577,16 @@ a {
 
 .proposals-content {
   position: relative;
-
   z-index: 2;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   padding-top: 40px;
 }
 
 .proposals-content h2 {
   color: var(--blanco);
-
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-
   margin-bottom: 30px;
 }
 
@@ -837,91 +598,65 @@ a {
   padding-bottom: 60px;
 }
 
-
 /* =========================
    FOOTER
    ========================= */
 
 .footer {
   position: relative;
-
   background: var(--azul-oscuro);
-
   color: var(--blanco);
-
   min-height: 140px;
-
   overflow: hidden;
 }
 
 .footer-image {
   position: absolute;
-
   width: 100%;
   height: 310%;
-
   top: -150%;
   left: 0;
-
   object-fit: fill;
-
   display: block;
   opacity: 0.50;
 }
 
 .footer-overlay {
   position: absolute;
-
   inset: 0;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   flex-wrap: wrap;
-
   gap: 12px;
-
   padding: 0 30px;
 }
 
 .footer-brand {
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
   font-weight: bold;
-
   font-size: 18px;
 }
 
 .footer-brand .brand-letter {
   width: 40px;
   height: 40px;
-
   flex: 0 0 40px;
 }
 
 .footer-slogan {
   display: flex;
-
   flex-direction: column;
-
   text-align: center;
-
   font-size: 18px;
 }
 
 .footer-contact p {
   margin: 1px 0;
-
   font-size: 17px;
 }
-
 
 /* =========================
    SOCIALS - HEADER
@@ -937,14 +672,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
   border: none;
   padding: 0;
-
   width: auto;
   height: auto;
-
   transition: transform 0.2s ease;
 }
 
@@ -955,7 +687,6 @@ a {
 .socials a img {
   width: 48px;
   height: 48px;
-
   object-fit: contain;
   display: block;
 }
@@ -964,7 +695,6 @@ a {
   width: 80px;
   height: 80px;
 }
-
 
 /* =========================
    SOCIALS - FOOTER
@@ -980,14 +710,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
   border: none;
   padding: 0;
-
   width: auto;
   height: auto;
-
   transition: transform 0.2s ease;
 }
 
@@ -998,7 +725,6 @@ a {
 .footer-socials a img {
   width: 48px;
   height: 48px;
-
   object-fit: contain;
   display: block;
 }
@@ -1008,40 +734,30 @@ a {
   height: 80px;
 }
 
-
 /* =========================
    BOTÓN HAMBURGUESA
    ========================= */
 
 .menu-toggle {
   display: none;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
-
   width: 40px;
   height: 40px;
-
   background: transparent;
   border: none;
-
   cursor: pointer;
-
   z-index: 200;
 }
 
 .menu-toggle span {
   display: block;
-
   width: 26px;
   height: 3px;
-
   background: var(--blanco);
-
   border-radius: 2px;
-
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -1057,9 +773,8 @@ a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-
 /* =========================
-   ACCIONES DUPLICADAS (desktop / mobile)
+   ACCIONES DUPLICADAS
    ========================= */
 
 .nav-actions--mobile {
@@ -1069,15 +784,15 @@ a {
 .menu-backdrop {
   position: fixed;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.5);
-
   z-index: 90;
 }
 
-
 /* =========================
-   RESPONSIVE: NAVBAR CON HAMBURGUESA
+   RESPONSIVE: MENÚ HAMBURGUESA
+   (se activa desde 1100px hacia abajo,
+   incluye tablet y celular, porque el
+   menú deslizante es el mismo en ambos)
    ========================= */
 
 @media (max-width: 1100px) {
@@ -1094,24 +809,16 @@ a {
     position: fixed;
     top: 0;
     right: 0;
-
     width: 280px;
     height: 100vh;
-
     background: var(--azul-oscuro);
-
     display: flex;
     flex-direction: column;
-
     gap: 0;
-
     padding: 90px 30px 30px;
-
     transform: translateX(100%);
     transition: transform 0.3s ease;
-
     z-index: 150;
-
     overflow-y: auto;
   }
 
@@ -1121,7 +828,6 @@ a {
 
   .nav-links a {
     padding: 14px 0;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -1129,9 +835,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     gap: 20px;
-
     margin-top: 24px;
   }
 
@@ -1139,16 +843,11 @@ a {
     width: 100%;
     text-align: center;
   }
-
-  .content {
-    width: 92%;
-  }
-
-  .options {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
 }
+
+/* =========================
+   RESPONSIVE MÓVIL
+   ========================= */
 
 @media (max-width: 600px) {
 
@@ -1158,7 +857,6 @@ a {
 
   .navbar {
     padding: 10px 15px;
-
     gap: 10px;
   }
 
@@ -1168,7 +866,6 @@ a {
 
   .btn-unete {
     padding: 8px 14px;
-
     font-size: 12px;
   }
 
@@ -1176,60 +873,57 @@ a {
     display: none;
   }
 
-
   /* =========================
-     HOME
+     FONDO MÓVIL
      ========================= */
-
-  .home {
-    background-attachment: scroll;
-
-    background-size: cover;
-
-    background-position: 8% center;
-
-    background-image: none !important;
-
-    min-height: 430px;
-  }
 
   .view-bg {
     display: block;
   }
 
-  .page-bg {
-    background-attachment: scroll;
+  /* =========================
+     SOMBREADO COMPLETO
+     (fijo en toda la pantalla, incluso con scroll,
+     para Inicio, Propuestas, Conócenos, Multimedia,
+     Contacto y Áreas)
+     ========================= */
 
-    background-size: cover;
-
-    background-position: 8% center;
-
-    background-image: none !important;
-
-    min-height: 520px;
+  .home__overlay,
+  .page-bg::before,
+  .proposals-page__overlay,
+  .site-hero__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .proposals-page {
-    background-attachment: scroll;
+  /* =========================
+     FONDOS MÓVIL UNIFICADOS
 
-    background-size: cover;
+     INICIO
+     PROPUESTAS
+     CONÓCENOS
+     MULTIMEDIA
+     CONTACTO
+     ÁREAS
+     ========================= */
 
-    background-position: 8% center;
-
-    background-image: none !important;
-  }
-
+  .home,
+  .page-bg,
+  .proposals-page,
   .site-hero {
-    background-attachment: scroll;
-
-    background-size: cover;
-
-    background-position: 8% center;
-
     background-image: none !important;
-
-    min-height: 300px;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: 8% center;
+    min-height: 430px;
   }
+
+  /* =========================
+     HERO
+     ========================= */
 
   .hero {
     min-height: 430px;
@@ -1253,14 +947,12 @@ a {
 
   .hero-badge {
     top: 15px;
-
     right: 15px;
   }
 
   .badge-circle {
     width: 36px;
     height: 36px;
-
     font-size: 16px;
   }
 
@@ -1272,20 +964,17 @@ a {
     display: none;
   }
 
-
   /* =========================
      CONTENT
      ========================= */
 
   .content {
     width: 90%;
-
-    padding: 30px 0 40px;
+    padding: 50px 0 70px;
   }
 
   .content h2 {
     font-size: 26px;
-
     margin-bottom: 30px;
   }
 
@@ -1297,17 +986,12 @@ a {
     height: 220px;
   }
 
-
   /* =========================
      SITE HERO
      ========================= */
 
-  .site-hero {
-    min-height: 350px;
-  }
-
   .site-hero__body {
-    min-height: 300px;
+    min-height: 430px;
   }
 
   .head-title h2 {
@@ -1318,14 +1002,12 @@ a {
     font-size: 14px;
   }
 
-
   /* =========================
      PROPUESTAS
      ========================= */
 
   .proposals-hero {
     min-height: 100vh;
-
     background-attachment: scroll;
   }
 
@@ -1337,7 +1019,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-
   /* =========================
      FOOTER
      ========================= */
@@ -1348,40 +1029,26 @@ a {
 
   .footer-image {
     position: relative;
-
     width: 100%;
     height: 200px;
-
     object-fit: cover;
-
     object-position: bottom 20%;
-
     display: block;
-
     opacity: 0.35;
   }
 
   .footer-overlay {
     position: absolute;
-
     inset: 0;
-
     flex-direction: column;
-
     justify-content: center;
-
     padding: 18px 15px;
-
     text-align: center;
-
     gap: 10px;
   }
 
   .footer-brand {
     flex-direction: column;
-  }
-
-  .footer-brand {
     font-size: 15px;
   }
 
@@ -1398,63 +1065,53 @@ a {
   .footer-contact {
     overflow-wrap: anywhere;
   }
+
   /* =========================
-   LOGOS REDES - HEADER
-   ========================= */
+     LOGOS REDES - HEADER
+     ========================= */
 
-.nav-actions .socials {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
+  .nav-actions .socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
 
-.nav-actions .socials a {
-  width: auto !important;
-  height: auto !important;
+  .nav-actions .socials a {
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    overflow: visible !important;
+  }
 
-  min-width: 0 !important;
-  min-height: 0 !important;
+  .nav-actions .socials a img {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
+    border-radius: 0 !important;
+  }
 
-  padding: 0 !important;
-  margin: 0 !important;
+  .nav-actions .socials a:last-child img {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
+    min-height: 80px !important;
+  }
 
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-
-  overflow: visible !important;
-}
-
-.nav-actions .socials a img {
-  width: 48px !important;
-  height: 48px !important;
-
-  min-width: 48px !important;
-  min-height: 48px !important;
-
-  max-width: none !important;
-  max-height: none !important;
-
-  object-fit: contain !important;
-  display: block !important;
-
-  border-radius: 0 !important;
-}
-
-.nav-actions .socials a:last-child img {
-  width: 80px !important;
-  height: 80px !important;
-
-  min-width: 80px !important;
-  min-height: 80px !important;
-}
-
-.nav-actions .socials a:hover {
-  transform: scale(1.1);
-}
-
+  .nav-actions .socials a:hover {
+    transform: scale(1.1);
+  }
 }
