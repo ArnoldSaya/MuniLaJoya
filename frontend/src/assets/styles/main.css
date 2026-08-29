@@ -80,13 +80,15 @@ a {
   top: 0;
   z-index: 100;
 }
-
 .brand {
   display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
+  align-items: center;
+
+  gap: 12px;
+
+  cursor: pointer;
+}
 .brand-letter {
   width: 44px;
   height: 44px;
@@ -168,9 +170,8 @@ a {
 
   min-height: 100vh;
 
-  background-color: var(--azul-negro);
-  background-size: contain;
-  background-position: center;
+  background-size: 110% 100%;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -195,12 +196,10 @@ a {
 
 .page-bg {
   position: relative;
+  min-height: 90vh;
 
-  min-height: 100vh;
-
-  background-color: var(--azul-negro);
-  background-size: contain;
-  background-position: center;
+  background-size: 110% 100%;
+  background-position: top left;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -637,9 +636,8 @@ a {
 
   min-height: 100vh;
 
-  background-color: var(--azul-negro);
-  background-size: contain;
-  background-position: center;
+  background-size: 110% 100%;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -736,9 +734,8 @@ a {
 
   min-height: 100vh;
 
-  background-color: var(--azul-negro);
-  background-size: contain;
-  background-position: center;
+  background-size: 110% 100%;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -831,7 +828,7 @@ a {
 
   color: var(--blanco);
 
-  min-height: 120px;
+  min-height: 140px;
 
   overflow: hidden;
 }
@@ -840,12 +837,12 @@ a {
   position: absolute;
 
   width: 100%;
-  height: 300px;
+  height: 310%;
 
-  top: -170px;
+  top: -150%;
   left: 0;
 
-  object-fit: cover;
+  object-fit: fill;
 
   display: block;
   opacity: 0.50;
@@ -878,7 +875,7 @@ a {
 
   font-weight: bold;
 
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer-brand .brand-letter {
@@ -895,13 +892,13 @@ a {
 
   text-align: center;
 
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer-contact p {
   margin: 1px 0;
 
-  font-size: 13px;
+  font-size: 17px;
 }
 
 
@@ -1180,7 +1177,7 @@ a {
   }
 
   .proposals-page {
-    background-attachment: fixed;
+    background-attachment: scroll;
 
     background-size: cover;
 
@@ -1343,6 +1340,24 @@ a {
 
   .footer-brand {
     flex-direction: column;
+  }
+
+  .footer-brand {
+    font-size: 15px;
+  }
+
+  .footer-slogan {
+    font-size: 15px;
+  }
+
+  .footer-contact p {
+    font-size: 14px;
+  }
+
+  .footer-brand,
+  .footer-slogan,
+  .footer-contact {
+    overflow-wrap: anywhere;
   }
   /* =========================
    LOGOS REDES - HEADER

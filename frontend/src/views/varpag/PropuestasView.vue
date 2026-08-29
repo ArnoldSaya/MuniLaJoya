@@ -97,11 +97,6 @@ const areas = [
             class="option-image"
           />
 
-          <!-- Título -->
-          <div class="option-title">
-            {{ area.title }}
-          </div>
-
         </router-link>
 
       </div>

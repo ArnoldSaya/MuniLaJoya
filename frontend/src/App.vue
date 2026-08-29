@@ -31,7 +31,7 @@ router.afterEach(() => {
     <header class="navbar">
 
       <!-- Marca -->
-      <div class="brand">
+      <router-link to="/" class="brand" @click="closeMenu">
 
         <img
           :src="logoA"
@@ -44,7 +44,7 @@ router.afterEach(() => {
           EL PROGRESO
         </div>
 
-      </div>
+      </router-link>
 
 
       <!-- Botón hamburguesa (solo visible en móvil/tablet) -->
