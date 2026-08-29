@@ -6,7 +6,7 @@ import '@/assets/styles/main.css'
 import footerImage from '@/assets/images/foot.jpg'
 import logoA from '@/assets/images/logoA.jpg'
 import logoFacebook from '@/assets/images/logoFce.jpg'
-import logoTiktok from '@/assets/images/logoTiktok.jpg'
+import logoTiktok from '@/assets/images/logoTikTok.jpg'
 
 const menuOpen = ref(false)
 const router = useRouter()
