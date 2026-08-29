@@ -7,13 +7,13 @@ def create_app():
 
     CORS(app)
 
-    from backend.app.router.home import home_router
-    from backend.app.router.municipalidad import municipalidad_router
-    from backend.app.router.saneamiento import saneamiento_router
-    from backend.app.router.seguridad import seguridad_router
-    from backend.app.router.desarrollo import desarrollo_router
-    from backend.app.router.obras import obras_router
-    from backend.app.router.agricultura import agricultura_router
+    from app.router.home import home_router
+    from app.router.municipalidad import municipalidad_router
+    from app.router.saneamiento import saneamiento_router
+    from app.router.seguridad import seguridad_router
+    from app.router.desarrollo import desarrollo_router
+    from app.router.obras import obras_router
+    from app.router.agricultura import agricultura_router
 
     app.register_blueprint(home_router)
     app.register_blueprint(municipalidad_router)
