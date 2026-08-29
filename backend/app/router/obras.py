@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 
-from backend.app.service.obras_service import obtener_informacion_obras
+from app.service.obras_service import obtener_informacion_obras
 
 
 obras_router = Blueprint("obras", __name__)
