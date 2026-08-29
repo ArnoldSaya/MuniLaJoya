@@ -168,7 +168,7 @@ a {
 .home {
   position: relative;
 
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 220px);
 
   background-size: 110% 100%;
   background-position: center top;
@@ -196,10 +196,10 @@ a {
 
 .page-bg {
   position: relative;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 200px);
 
   background-size: 110% 100%;
-  background-position: top left;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 

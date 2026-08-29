@@ -43,7 +43,10 @@ const areas = [
 </script>
 
 <template>
-  <div class="proposals-page">
+  <div
+    class="proposals-page"
+    :style="{ backgroundImage: `url(${fondoCamilo})` }"
+  >
 
     <img
       :src="fondoCamilo"
