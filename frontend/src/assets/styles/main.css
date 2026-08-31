@@ -166,8 +166,7 @@ a {
 
 .home,
 .page-bg,
-.proposals-page,
-.site-hero {
+.proposals-page {
   position: relative;
   min-height: 100vh;
   background-size: 110% 100%;
@@ -179,8 +178,7 @@ a {
 
 .home__overlay,
 .page-bg::before,
-.proposals-page__overlay,
-.site-hero__overlay {
+.proposals-page__overlay {
   content: "";
   position: absolute;
   inset: 0;
@@ -200,14 +198,6 @@ a {
 .page-bg > *:not(.view-bg) {
   position: relative;
   z-index: 1;
-}
-
-/* Extras propias de .site-hero (centrado de contenido) */
-.site-hero {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* =========================
@@ -294,6 +284,20 @@ a {
 
 .btn-plan:hover {
   background: var(--rojo-oscuro);
+}
+
+/* =========================
+   QR
+   ========================= */
+.qr-image {
+  width: 90px;
+  height: 90px;
+
+  display: block;
+
+  object-fit: contain;
+
+  margin: 0 auto 14px;
 }
 
 /* =========================
@@ -496,23 +500,6 @@ a {
   font-size: 18px;
   font-weight: 600;
   color: var(--azul-principal);
-}
-
-/* =========================
-   SITE HERO
-   (contenido interno)
-   ========================= */
-
-/* Contenido */
-
-.site-hero__body {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* =========================
@@ -890,8 +877,7 @@ a {
 
   .home__overlay,
   .page-bg::before,
-  .proposals-page__overlay,
-  .site-hero__overlay {
+  .proposals-page__overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -912,8 +898,7 @@ a {
 
   .home,
   .page-bg,
-  .proposals-page,
-  .site-hero {
+  .proposals-page {
     background-image: none !important;
     background-attachment: scroll;
     background-size: cover;
@@ -984,14 +969,6 @@ a {
 
   .option-placeholder {
     height: 220px;
-  }
-
-  /* =========================
-     SITE HERO
-     ========================= */
-
-  .site-hero__body {
-    min-height: 430px;
   }
 
   .head-title h2 {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import fondoCamilo from '@/assets/images/FondoCamilo.jpg'
 import logoA from '@/assets/images/logoA.jpg'
+import qrImage from '@/assets/images/QR.png'
 </script>
 
 <template>
@@ -48,28 +49,6 @@ import logoA from '@/assets/images/logoA.jpg'
         </router-link>
 
       </div>
-
-
-      <!-- =========================
-           LOGO / ALIANZA
-      ========================== -->
-
-      <div class="hero-badge">
-
-        <img
-          :src="logoA"
-          alt="Alianza para el Progreso"
-          class="badge-circle"
-        />
-
-        <div class="badge-text">
-          ALIANZA PARA<br />
-          EL PROGRESO
-        </div>
-
-      </div>
-
-
       <!-- =========================
            TARJETA DEL PLAN
       ========================== -->
@@ -87,7 +66,11 @@ import logoA from '@/assets/images/logoA.jpg'
           para La Joya.
         </p>
 
-        <div class="qr-placeholder"></div>
+        <img
+          :src="qrImage"
+          alt="Código QR"
+          class="qr-image"
+        />
 
         <router-link
           to="/propuestas"

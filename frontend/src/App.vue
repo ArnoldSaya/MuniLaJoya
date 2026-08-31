@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import '@/assets/styles/main.css'
 
@@ -7,6 +7,8 @@ import footerImage from '@/assets/images/foot.jpg'
 import logoA from '@/assets/images/logoA.jpg'
 import logoFacebook from '@/assets/images/logoFce.jpg'
 import logoTiktok from '@/assets/images/logoTikTok.jpg'
+
+import entradaAudio from '@/assets/videos/entrada.mp3'
 
 const menuOpen = ref(false)
 const router = useRouter()
@@ -18,6 +20,72 @@ function closeMenu() {
 // Cierra el menú automáticamente al navegar a otra página
 router.afterEach(() => {
   menuOpen.value = false
+})
+
+/* =========================
+   MÚSICA DE ENTRADA
+   ========================= */
+
+const audio = new Audio(entradaAudio)
+
+audio.volume = 0.35
+audio.preload = 'auto'
+
+let audioStarted = false
+
+const playEntranceAudio = async () => {
+  if (audioStarted) return
+
+  try {
+    audio.currentTime = 0
+
+    await audio.play()
+
+    audioStarted = true
+
+    removeInteractionListeners()
+
+  } catch {
+    // El navegador bloqueó el autoplay. Esperamos interacción.
+  }
+}
+
+const playAfterInteraction = async () => {
+  if (audioStarted) return
+
+  try {
+    audio.currentTime = 0
+
+    await audio.play()
+
+    audioStarted = true
+
+    removeInteractionListeners()
+
+  } catch {
+    // Si sigue bloqueado, esperamos otra interacción.
+  }
+}
+
+const removeInteractionListeners = () => {
+  window.removeEventListener('click', playAfterInteraction)
+  window.removeEventListener('touchstart', playAfterInteraction)
+  window.removeEventListener('keydown', playAfterInteraction)
+}
+
+onMounted(() => {
+  playEntranceAudio()
+
+  window.addEventListener('click', playAfterInteraction)
+  window.addEventListener('touchstart', playAfterInteraction)
+  window.addEventListener('keydown', playAfterInteraction)
+})
+
+onUnmounted(() => {
+  removeInteractionListeners()
+
+  audio.pause()
+  audio.currentTime = 0
 })
 </script>
 
