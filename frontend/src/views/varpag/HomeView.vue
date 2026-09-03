@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import fondoCamilo from '@/assets/images/FondoCamilo.jpg'
 import logoA from '@/assets/images/logoA.jpg'
-import qrImage from '@/assets/images/QR.png'
 </script>
 
 <template>
@@ -46,37 +45,6 @@ import qrImage from '@/assets/images/QR.png'
           class="btn-plan"
         >
           CONOCE NUESTRO PLAN →
-        </router-link>
-
-      </div>
-      <!-- =========================
-           TARJETA DEL PLAN
-      ========================== -->
-
-      <div class="hero-card">
-
-        <h3>
-          CONOCE NUESTRO<br />
-          PLAN DE GOBIERNO
-        </h3>
-
-        <p>
-          Escanea el código QR y conoce
-          todas nuestras propuestas
-          para La Joya.
-        </p>
-
-        <img
-          :src="qrImage"
-          alt="Código QR"
-          class="qr-image"
-        />
-
-        <router-link
-          to="/propuestas"
-          class="btn-plan-card"
-        >
-          VER PLAN COMPLETO
         </router-link>
 
       </div>

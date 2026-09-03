@@ -185,6 +185,12 @@ onUnmounted(() => {
 
           </div>
 
+          <div class="nav-contact-mobile">
+            <p>📍 La Joya, Arequipa</p>
+            <p>📞 +51 987 654 321</p>
+            <p>✉️ contacto@alianzaparaelprogreso.pe</p>
+          </div>
+
         </div>
 
       </nav>

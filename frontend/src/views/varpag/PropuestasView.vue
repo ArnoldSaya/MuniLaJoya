@@ -83,10 +83,6 @@ const areas = [
 
     <main class="content proposals-content">
 
-      <h2>
-        Conoce nuestras áreas
-      </h2>
-
       <div class="options">
 
         <router-link
